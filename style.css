@@ -1,0 +1,331 @@
+@font-face {
+    font-family: 'roboto';
+    src: url('font/Roboto-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto';
+}
+
+.main {
+    align-items: center;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.table {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    border-radius: 16px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: auto auto;
+    height: 60%;
+    padding: 12px;
+    width: 60%;
+}
+
+.timer {
+    color: red;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 0, 0, 0.397);
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.btn-containers {
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+    width: 60%;
+    padding: 4px;
+}
+
+.card-container {
+    position: relative;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    perspective: 4000px;
+}
+
+.flip .card {
+    transform: rotateY(180deg);
+}
+
+.flip .card-back {
+    transform: rotateY(360deg);
+}
+
+.card {
+    align-items: center;
+    backdrop-filter: blur(5px);
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    transition: transform 1s;
+    width: 100%;
+    -moz-backface-visibility: hidden;
+    -webkit-backdrop-filter: blur(5px);
+    -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    transform: rotateY(180deg);
+    transition: transform 1s;
+    width: 100%;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.alert,
+.win,
+.choose-lvl {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.555);
+}
+
+.alert-content,
+.win-content,
+.lvl-options {
+    width: 50%;
+    max-width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.alert-options,
+.win-options {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.alert-msg {
+    width: 30%;
+    height: 30%;
+    background-color: antiquewhite;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn-container {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60%;
+}
+
+.btn-container>button {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.alert-won,
+.alert-lost {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-won,
+.modal-lost {
+    height: 60%;
+    width: 60%;
+    background-color: antiquewhite;
+    border-radius: 8px;
+}
+
+.btn-img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.1s;
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3)), brightness(1);
+}
+
+.btn-img:active {
+    transform: scale(0.8);
+    transition: all 0.1s;
+}
+
+.play-pause {
+    display: none;
+}
+
+.card-matched {
+    background-image: url('img/play.png');
+    background-size: cover;
+}
+
+.btn-misc {
+    width: 60%;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    margin-bottom: 12px;
+    gap: 16px;
+}
+
+.lvls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.lvl {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+@media screen and (max-width: 350px) {
+
+    .table {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 80%;
+        gap: 8px;
+        height: 60%;
+        padding: 12px;
+        border-radius: 16px;
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    }
+
+    .timer {
+        color: red;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 3px solid white;
+        width: 40px;
+        height: 40px;
+    }
+
+    .time-left {
+        font-size: 15px;
+    }
+
+
+    .btn-img {
+        width: 40px;
+        height: 40px;
+        transition: all 0.1s;
+        filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3)), brightness(1);
+    }
+
+    .btn-containers {
+        margin-top: 24px;
+        display: flex;
+        gap: 32px;
+        width: 80%;
+        padding: 4px;
+        align-items: center;
+    }
+
+    .btn-misc {
+        width: 80%;
+    }
+
+    .lvl {
+        width: 30px;
+        height: 30px;
+    }
+
+    .alert-content,
+    .win-content,
+    .lvl-options {
+        padding: 8px;
+    }
+}
+
+.option-reset>img,
+.option-cancel>img,
+.win-reset>img {
+    width: 50px;
+    height: 50px;
+}
+
+.c-lvl {
+    border-radius: 16px;
+    border: 2px solid chocolate;
+    color: chocolate;
+    cursor: pointer;
+    padding: 4px 16px;
+}
+
+.c-lvl:active {
+    transform: scale(0.8);
+}
+
+footer {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+}
+
+footer>a {
+    font-size: 10px;
+}
+
+.win-bg {
+    background-image: url('gif/confetti.gif');
+    background-size: cover;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="main">
+    <section class="btn-misc">
+      <img
+        class="btn-img"
+        src="img/setting.png"
+        alt="play/pause-img"
+        onclick="openSettings()"
+      />
+    </section>
+    <section class="table"></section>
+    <section class="btn-containers">
+      <img
+        class="btn-img play-pause"
+        src="img/play.png"
+        onclick="toggleTimer()"
+        alt="play/pause-img"
+      />
+      <div class="timer"><span class="time-left"></span></div>
+    </section>
+
+    <section class="alert">
+      <div class="alert-content">
+        <h1>Game Paused!!!</h1>
+        <div class="alert-options">
+          <div class="option-reset">
+            <img src="img/restart.png" onclick="resetGame()" />
+            <p>Reset</p>
+          </div>
+          <div class="option-cancel">
+            <img src="img/cross.png" onclick="cancel()" />
+            <p>Close</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="win">
+      <div class="win-content win-bg">
+        <h1 class="win-loose-txt">You win!!!</h1>
+        <div class="win-options">
+          <div class="win-reset">
+            <img src="img/restart.png" onclick="resetGame()" />
+            <p>Restart</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="choose-lvl">
+      <div class="lvl-options">
+        <h1>Level</h1>
+        <div class="lvls">
+          <img src="img/one.png" class="lvl" alt="one" onclick="playLvl(1)" />
+          <img src="img/two.png" class="lvl" alt="two" onclick="playLvl(2)" />
+          <img src="img/three.png" class="lvl" alt="three" onclick="playLvl(3)" />
+        </div>
+        <p class="c-lvl" onclick="removeLvlSelection()">Cancel</p>
+      </div>
+    </section>
+    <footer>
+      <a
+        href="https://www.flaticon.com/free-icons/equis"
+        title="equis icons"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Equis icons created by IYAHICON - Flaticon</a
+      >
+      <a
+        href="https://www.flaticon.com/free-icons/ui"
+        title="ui icons"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Ui icons created by icon_small - Flaticon</a
+      >
+    </footer>
+  </body>
+  <script src="./logic.js"></script>
+</html>
