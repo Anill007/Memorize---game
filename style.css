@@ -329,3 +329,23 @@ footer>a {
     background-image: url('gif/confetti.gif');
     background-size: cover;
 }
+
+.title {
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.game-title, .subtitle {
+    margin-right: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.subtitle {
+    font-size: 12px;
+}
+
+.game-title {
+    letter-spacing: 4px;
+}
